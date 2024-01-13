@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loginuser-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: loginuser
+  template:
+    metadata:
+      labels:
+        app: loginuser
+    spec:
+      containers:
+      - name: loginuser
+        image: faiadoragon/loginuser:2
+        ports:
+        - containerPort: 3000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: loginuser-service
+spec:
+  selector:
+    app: loginuser
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: LoadBalancer
+
+
