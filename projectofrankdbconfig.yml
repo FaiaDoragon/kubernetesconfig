@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: faiadoragon/proyecto_mysql:1
+        image: faiadoragon/mysqlusers:1
         ports:
         - containerPort: 3306
         env:

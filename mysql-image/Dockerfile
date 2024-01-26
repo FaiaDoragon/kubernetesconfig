@@ -1,3 +1,5 @@
-FROM faiadoragon/mysql:8.0
+FROM arm64/mysql:8.0
 
-COPY init.sql /docker-entrypoint-initdb.d/
+COPY schemasinit.sql /docker-entrypoint-initdb.d/
+COPY usersinit.sql /docker-entrypoint-initdb.d/
+

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: loginuser
-        image: faiadoragon/loginuser:2
+        image: faiadoragon/loginuser:1
         ports:
         - containerPort: 3000
 
@@ -31,6 +31,5 @@ spec:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-  type: LoadBalancer
-
-
+  type: NodePort
+  # type: LoadBalancer
